@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "皇仓放粮",
+    "navigationBarBackgroundColor": "#0bb9b6",
+    "backgroundColor": "#FFFFFF",
+    "titleView": false
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

@@ -1,0 +1,39 @@
+{
+    "_id": "fc5ac5c95fbd0bf9003d301f646b7191",
+    "title": "饿了么",
+    "coupon": [
+        {
+            "name": "最高20无门槛",
+            "type": 1.0,
+            "url": "",
+            "bannerPic": "cloud://hongbao-1g1vxdep2e9a4001.686f-hongbao-1g1vxdep2e9a4001-1304791238/banner1.jpeg",
+            "icon": "cloud://hongbao-1g1vxdep2e9a4001.686f-hongbao-1g1vxdep2e9a4001-1304791238/ele.png",
+            "minapp": {
+                "appid": "wxece3a9a4c82f58c9",
+                "path": "taoke/pages/shopping-guide/index?scene=cLCc3su"
+            }
+        },
+        {
+            "name": "大额满减劵",
+            "type": 1.0,
+            "url": "",
+            "bannerPic": "cloud://hongbao-1g1vxdep2e9a4001.686f-hongbao-1g1vxdep2e9a4001-1304791238/dae.jpg",
+            "icon": "cloud://hongbao-1g1vxdep2e9a4001.686f-hongbao-1g1vxdep2e9a4001-1304791238/ele.png",
+            "minapp": {
+                "appid": "wxece3a9a4c82f58c9",
+                "path": "pages/sharePid/web/index?scene=https://s.click.ele.me/N4eX3su"
+            }
+        },
+        {
+            "bannerPic": "cloud://hongbao-1g1vxdep2e9a4001.686f-hongbao-1g1vxdep2e9a4001-1304791238/banner2.png",
+            "minapp": {
+                "appid": "wxece3a9a4c82f58c9",
+                "path": "pages/sharePid/web/index?scene=https://s.click.ele.me/J6Ga8su"
+            },
+            "name": "商超限量",
+            "type": 1.0,
+            "icon": "cloud://hongbao-1g1vxdep2e9a4001.686f-hongbao-1g1vxdep2e9a4001-1304791238/ele.png",
+            "url": ""
+        }
+    ]
+}
