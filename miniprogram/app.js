@@ -1,7 +1,6 @@
 //app.js
 App({
   onLaunch: function () {
-    
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -14,7 +13,42 @@ App({
         traceUser: true,
       })
     }
+    // wx.getSetting({
+    //   success:res=> {
+    //     console.log(res)
+    //     if (!res.authSetting['scope.userInfo']) {
+    //       wx.authorize({
+    //         scope: 'scope.userInfo',
+    //         success:(res)=> {
+    //           console.log(11,res)
+    //          // this.getInfo()
+    //         },
+    //         complete:(res)=>{
+    //           console.log(222,res)
+    //         }
+    //       })
+    //     }else{
+    //       this.getInfo()
+    //     }
+    //   }
+    // })
+    // 获取用户信息
 
     this.globalData = {}
-  }
+  },
+  // getInfo:function(){
+  //   wx.getUserInfo({
+  //     success: res => {
+  //       // 可以将 res 发送给后台解码出 unionId
+  //       this.globalData.userInfo = res.userInfo
+  //       console.log(res)
+
+  //       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+  //       // 所以此处加入 callback 以防止这种情况
+  //       if (this.userInfoReadyCallback) {
+  //         this.userInfoReadyCallback(res)
+  //       }
+  //     }
+  //   })
+  // }
 })

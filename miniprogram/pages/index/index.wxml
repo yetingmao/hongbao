@@ -1,6 +1,7 @@
 <!-- miniprogram/pages/index/index.wxml -->
 <van-notice-bar scrollable="{{ false }}" text="记得右上角添加收藏哟, 每天都能领券" color="#fff" background="#0bb9b6"></van-notice-bar>
 <van-notice-bar left-icon="volume-o" text="{{notice}}" />
+<!-- <button  open-type="getUserInfo" bindgetuserinfo="getUserInfo"> </button> -->
 <view wx:if="{{tabs.length >0}}">
     <van-tabs bind:change="onChange" active="{{ activeTab }}" swipeable>
         <van-tab wx:for="{{tabs}}" wx:for-index="idx" wx:key="idx" title="{{item.title}}" >

@@ -1,15 +1,17 @@
 const cloud = require('wx-server-sdk');
-cloud.init();
+cloud.init({
+    env: "hongbao-1g1vxdep2e9a4001"
+  });
 const db = cloud.database();
 
 exports.main = async (event, context) => {
   try {
     const {OPENID} = cloud.getWXContext();
     // 在云开发数据库中存储订阅任务
-    const result = await db.collection('messages').add({
+    await db.collection('messages').add({
       data: {
         touser: OPENID, // 订阅者的openid
-        page: 'index', // 订阅消息卡片点击后会打开小程序的哪个页面
+        page: 'pages/index/index', // 订阅消息卡片点击后会打开小程序的哪个页面
         data: event.data, // 订阅消息的数据
         templateId: event.templateId, // 订阅消息模板ID
        // done: false, // 消息发送状态设置为 false
