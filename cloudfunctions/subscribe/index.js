@@ -7,6 +7,7 @@ const db = cloud.database();
 exports.main = async (event, context) => {
   try {
     const {OPENID} = cloud.getWXContext();
+    const userInfo=event.userInfo;
     // 在云开发数据库中存储订阅任务
     await db.collection('messages').add({
       data: {
@@ -14,7 +15,9 @@ exports.main = async (event, context) => {
         page: 'pages/index/index', // 订阅消息卡片点击后会打开小程序的哪个页面
         data: event.data, // 订阅消息的数据
         templateId: event.templateId, // 订阅消息模板ID
-       // done: false, // 消息发送状态设置为 false
+        user: userInfo?userInfo.nickName:"", // 用户名字
+        send:false,
+        date:new Date().toLocaleString(),
       },
     });
     return true;

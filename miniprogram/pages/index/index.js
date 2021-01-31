@@ -11,9 +11,8 @@ Page({
         msg: {},
         activeTab: 0,
         notice: '领完券记得要收藏哦, 以便下次再领',
-        isSubscribe:"",
+       // isSubscribe:"",
     },
-
     /**
      * 生命周期函数--监听页面加载
      */
@@ -50,18 +49,17 @@ Page({
                 notice: notice[0].notice
             })
         })
-        this.hasSubscribe()
     },
-    hasSubscribe() {
-        wx.cloud.callFunction({
-            name: 'getSubscribeNumber',
-            complete: res => {
-                this.setData({
-                    isSubscribe:res.result
-                });
-            }
-        });
-    },
+    // hasSubscribe() {
+    //     wx.cloud.callFunction({
+    //         name: 'getSubscribeNumber',
+    //         complete: res => {
+    //             this.setData({
+    //                 isSubscribe:res.result
+    //             });
+    //         }
+    //     });
+    // },
 
     onChange(e) {
         const index = e.detail.index
@@ -71,19 +69,15 @@ Page({
     },
 
     toCoupon(e) {
-        if(this.data.isSubscribe){
-            this.jump(e)
-
-        }else{
-            this.onSubscribe(() => {
-                this.jump(e)
-            });
-        }
+        this.jump(e)
 
     },
     jump(e) {
         const couponIdx = e.currentTarget.dataset.index
+        console.log(e)
+        console.log(this.data.tabs[this.data.activeTab])
         const wxappinfo = this.data.tabs[this.data.activeTab].coupon[couponIdx].minapp
+       
         wx.navigateToMiniProgram({
             appId: wxappinfo.appid,
             path: wxappinfo.path,
@@ -92,54 +86,6 @@ Page({
                 console.log('打开成功', res)
             }
         })
-    },
-    onSubscribe(fn) {
-        //申请发送订阅消息
-        wx.requestSubscribeMessage({
-            // 传入订阅消息的模板id，模板 id 可在小程序管理后台申请
-            tmplIds: [lessonTmplId],
-            complete:res=> {
-                // 申请订阅成功
-                if (res.errMsg === 'requestSubscribeMessage:ok') {
-                    // 这里将订阅的课程信息调用云函数存入云开发数据
-                    wx.cloud
-                        .callFunction({
-                            name: 'subscribe',
-                            data: {
-                                templateId: lessonTmplId,
-                                data:{
-                                    thing1:{
-                                        value:"外卖红包"
-                                    },
-                                    thing3:{
-                                        value:"上午10点30分"
-                                    }
-                                }
-                            },
-                            complete: res => {
-                                this.setData({
-                                    isSubscribe:res.result
-                                });
-                                fn()
-                            }
-                        })
-                        // .then(() => {
-                        //     wx.showToast({
-                        //         title: '订阅成功',
-                        //         icon: 'success',
-                        //         duration: 2000,
-                        //     });
-                        // })
-                        // .catch(() => {
-                        //     wx.showToast({
-                        //         title: '订阅失败',
-                        //         icon: 'success',
-                        //         duration: 2000,
-                        //     });
-                        // });
-                }
-            },
-        });
     },
 
     /**
@@ -152,7 +98,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        this.getTabBar().init();
     },
 
     /**
