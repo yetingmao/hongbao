@@ -1,8 +1,9 @@
 // miniprogram/pages/index/index.js
+import { subscribe, hasSubscribe} from "../../utils/index"
+import Toast from '../../components/dist/toast/toast';
 const db = wx.cloud.database()
-const lessonTmplId = "WsI7r1v9d1hdKcWqT9cLmktb8CHGI8Rnfy4d6QlpGoc";
+const app = getApp()
 Page({
-
     /**
      * 页面的初始数据
      */
@@ -11,7 +12,7 @@ Page({
         msg: {},
         activeTab: 0,
         notice: '领完券记得要收藏哦, 以便下次再领',
-       // isSubscribe:"",
+        isSubscribe:"",
     },
     /**
      * 生命周期函数--监听页面加载
@@ -49,17 +50,12 @@ Page({
                 notice: notice[0].notice
             })
         })
+        hasSubscribe(res=>{
+            this.setData({
+                isSubscribe:res.result
+            });
+        })
     },
-    // hasSubscribe() {
-    //     wx.cloud.callFunction({
-    //         name: 'getSubscribeNumber',
-    //         complete: res => {
-    //             this.setData({
-    //                 isSubscribe:res.result
-    //             });
-    //         }
-    //     });
-    // },
 
     onChange(e) {
         const index = e.detail.index
@@ -69,13 +65,25 @@ Page({
     },
 
     toCoupon(e) {
-        this.jump(e)
-
+        if (!app.globalData.userInfo) {
+            wx.switchTab({
+                url: "/pages/user/index",
+                complete:()=>{
+                    Toast.fail('请先登录');
+                }
+            });
+            return
+          }
+        if(this.data.isSubscribe){
+            this.jump(e)
+        }else{
+            subscribe(res=>{
+                this.jump(e)
+            });
+        }
     },
     jump(e) {
         const couponIdx = e.currentTarget.dataset.index
-        console.log(e)
-        console.log(this.data.tabs[this.data.activeTab])
         const wxappinfo = this.data.tabs[this.data.activeTab].coupon[couponIdx].minapp
        
         wx.navigateToMiniProgram({

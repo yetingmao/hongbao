@@ -15,6 +15,7 @@ exports.main = async (event, context) => {
       // 查询条件这里做了简化，只查找了状态为未发送的消息
       .where({
         touser: OPENID,
+        send:false
       })
       .get();
     return messages.data.length > 0 ? true : false;

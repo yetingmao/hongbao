@@ -30,3 +30,4 @@
 <view wx:else class="loading">
     <van-loading size="30px">加载最好的优惠券...</van-loading>
 </view>
+<van-toast id="van-toast" />

@@ -1,7 +1,6 @@
 // miniprogram/pages/index/index.js
 import Toast from '../../components/dist/toast/toast';
-const db = wx.cloud.database()
-const lessonTmplId = "WsI7r1v9d1hdKcWqT9cLmktb8CHGI8Rnfy4d6QlpGoc";
+import { subscribe, hasSubscribe} from "../../utils/index"
 const app = getApp()
 Page({
   /**
@@ -66,44 +65,24 @@ Page({
   collect() {
     Toast.success('点击右上角添加收藏～');
   },
-  subscribe() {
+  requestSubscribe() {
     if (!app.globalData.userInfo) {
       Toast.fail('请先登录');
       return
     }
+    hasSubscribe(res=>{
+      if(res.result){
+        Toast.success('已经订阅成功了');
+      }else{
+        subscribe(res=>{
+          if (res.result === true) {
+            Toast.success('订阅成功');
+          } else {
+            Toast.fail('订阅失败');
+          }
+      });
+      }
+    })
     //申请发送订阅消息
-    wx.requestSubscribeMessage({
-      // 传入订阅消息的模板id，模板 id 可在小程序管理后台申请
-      tmplIds: [lessonTmplId],
-      complete: res => {
-        // 申请订阅成功
-        if (res.errMsg === 'requestSubscribeMessage:ok') {
-          // 这里将订阅的课程信息调用云函数存入云开发数据
-          wx.cloud
-            .callFunction({
-              name: 'subscribe',
-              data: {
-                templateId: lessonTmplId,
-                data: {
-                  thing1: {
-                    value: "外卖红包"
-                  },
-                  thing3: {
-                    value: "上午10点30分"
-                  }
-                },
-                userInfo: app.globalData.userInfo
-              },
-              complete: res => {
-                if (res.result === true) {
-                  Toast.success('订阅成功');
-                } else {
-                  Toast.fail('订阅失败');
-                }
-              }
-            })
-        }
-      },
-    });
   },
 })

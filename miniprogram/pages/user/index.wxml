@@ -10,7 +10,7 @@
   </view>
   <view class="content">
     <van-cell-group>
-      <van-cell title="订阅红包" icon="smile-comment-o" is-link bind:click="subscribe" />
+      <van-cell title="订阅红包" icon="smile-comment-o" is-link bind:click="requestSubscribe" />
       <van-cell title="收藏" icon="records" is-link bind:click="collect" />
     </van-cell-group>
   </view>
