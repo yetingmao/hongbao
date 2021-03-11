@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/article/index",
+
     "pages/index/index",
     "pages/user/index"
   ],
@@ -8,6 +10,9 @@
 		"list": [
 			{
 				"pagePath": "pages/index/index"
+      },
+      {
+				"pagePath": "pages/article/index"
 			},
 			{
 				"pagePath": "pages/user/index"

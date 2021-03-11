@@ -9,6 +9,12 @@ Component({
 				name:"home"
 			},
 			{
+				icon: 'bill-o',
+				text: '阅读',
+				url: '/pages/article/index',
+				name:"article"
+			},
+			{
 				icon: 'manager-o',
 				text: '我的',
 				url: '/pages/user/index',
