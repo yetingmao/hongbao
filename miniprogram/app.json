@@ -1,7 +1,24 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/article/index",
+
+    "pages/index/index",
+    "pages/user/index"
   ],
+  "tabBar": {
+		"custom": true,
+		"list": [
+			{
+				"pagePath": "pages/index/index"
+      },
+      {
+				"pagePath": "pages/article/index"
+			},
+			{
+				"pagePath": "pages/user/index"
+			}
+		]
+	},
   "window": {
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "皇仓放粮",
@@ -9,6 +26,7 @@
     "backgroundColor": "#FFFFFF",
     "titleView": false
   },
+
   "sitemapLocation": "sitemap.json",
   "style": "v2"
 }

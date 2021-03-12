@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="userinfo">
+    <van-button icon="user-circle-o" custom-style="width:200rpx;margin:0 0 0 50rpx" round
+      wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" plain type="info" color="hsl(179, 89%, 38%)"
+      bindgetuserinfo="getUserInfo"> 登录 </van-button>
+    <view wx:else class="info">
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="info_name">{{userInfo.nickName}}</text>
+    </view>
+  </view>
+  <view class="content">
+    <van-cell-group>
+      <van-cell title="订阅红包" icon="smile-comment-o" is-link bind:click="requestSubscribe" />
+      <van-cell title="收藏" icon="records" is-link bind:click="collect" />
+    </van-cell-group>
+  </view>
+  <van-toast id="van-toast" />
+</view>
