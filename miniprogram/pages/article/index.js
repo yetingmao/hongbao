@@ -16,18 +16,15 @@ Page({
         src: "",
         name:"",
         loading: false,
-        isSubscribe: "",
+        list: [],
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        // db.collection('article').get().then(res => {
-
-        // })
+        this.getList()
     },
     showAdd(e) {
-        console.log(app.globalData.userInfo)
         if (!app.globalData.userInfo) {
             wx.switchTab({
                 url: "/pages/user/index",
@@ -73,8 +70,23 @@ Page({
                 this.setData({
                     loading: false,
                   })
-                 // Toast.success('添加成功');
+                 this.getList()
             }
+        })
+    },
+    getList() {
+        db.collection('article').get().then(res => {
+            const data=res.data.map((item)=>{
+               return {
+                name:item.name,
+                src:item.src,
+                label:`作者：${item.username}-----上传时间：${new Date(item.date).toLocaleString()}-----阅读数：${item.number}`,
+               }  
+            });
+            console.log(data)
+            this.setData({
+                list:data
+            })
         })
     },
     jump(e) {

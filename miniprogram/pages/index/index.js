@@ -65,15 +65,15 @@ Page({
     },
 
     toCoupon(e) {
-        if (!app.globalData.userInfo) {
-            wx.switchTab({
-                url: "/pages/user/index",
-                complete:()=>{
-                    Toast.fail('请先登录');
-                }
-            });
-            return
-          }
+        // if (!app.globalData.userInfo) {
+        //     wx.switchTab({
+        //         url: "/pages/user/index",
+        //         complete:()=>{
+        //             Toast.fail('请先登录');
+        //         }
+        //     });
+        //     return
+        //   }
         if(this.data.isSubscribe){
             this.jump(e)
         }else{
