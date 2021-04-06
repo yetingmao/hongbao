@@ -95,3 +95,20 @@
         }
     ]
 }
+{
+    "_id": "73f70d5c5fdb3fc8000c2312795782b2",
+    "title": "电影",
+    "coupon": [
+        {
+            "name": "优惠购票",
+            "icon": "cloud://hongbao-1g1vxdep2e9a4001.686f-hongbao-1g1vxdep2e9a4001-1304791238/dianying.jpeg",
+            "bannerPic": "cloud://hongbao-1g1vxdep2e9a4001.686f-hongbao-1g1vxdep2e9a4001-1304791238/banner8.jpeg",
+            "type": 1,
+            "minapp": {
+                "appid": "wx75a18bf82ff322eb",
+                "path": "pages/index/index?share_user_id=278321"
+            }
+        }
+    ]
+}
+

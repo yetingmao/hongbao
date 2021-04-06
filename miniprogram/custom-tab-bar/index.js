@@ -1,39 +1,54 @@
+const db = wx.cloud.database()
 Component({
 	data: {
 		active: "home",
-		list: [
-			{
+		list: [{
 				icon: 'bill-o',
 				text: '领红包',
 				url: '/pages/index/index',
-				name:"home"
+				name: "home"
 			},
 			{
-				icon: 'bill-o',
+				"icon": "apps-o",
+				"text": "工具",
+				"url": "/pages/tools/index",
+				"name": "tools"
+			},
+			{
+				icon: 'description',
 				text: '阅读',
 				url: '/pages/article/index',
-				name:"article"
+				name: "article"
 			},
 			{
 				icon: 'manager-o',
 				text: '我的',
 				url: '/pages/user/index',
-				name:"user"
+				name: "user"
 			}
 		]
 	},
-
+	created() {
+		db.collection('tabbar').get().then(res => {
+			const data=res.data[0].list.filter(item=>item.show)
+			this.setData({
+				list: data
+			})
+		})
+	},
 	methods: {
 		onChange(event) {
-			this.setData({ active: event.detail });
-			const temp=this.data.list.find(item=>item.name===event.detail)
+			this.setData({
+				active: event.detail
+			});
+			const temp = this.data.list.find(item => item.name === event.detail)
 			wx.switchTab({
 				url: temp.url
 			});
 		},
 		init() {
 			const page = getCurrentPages().pop();
-			const temp=this.data.list.find(item => item.url === `/${page.route}`)
+			const temp = this.data.list.find(item => item.url === `/${page.route}`)
 			this.setData({
 				active: temp.name
 			});

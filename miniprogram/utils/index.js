@@ -41,6 +41,7 @@ function  hasSubscribe(fn) {
       }
   });
 }
+
 module.exports = {
   subscribe,
   hasSubscribe

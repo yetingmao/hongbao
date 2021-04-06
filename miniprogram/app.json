@@ -1,8 +1,9 @@
 {
   "pages": [
-    "pages/article/index",
-
     "pages/index/index",
+    "pages/tools/index",
+    "pages/article/index",
+    "pages/read/index",
     "pages/user/index"
   ],
   "tabBar": {
@@ -10,6 +11,9 @@
 		"list": [
 			{
 				"pagePath": "pages/index/index"
+      },
+      {
+				"pagePath": "pages/tools/index"
       },
       {
 				"pagePath": "pages/article/index"

@@ -22,18 +22,9 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.getList()
+       
     },
     showAdd(e) {
-        if (!app.globalData.userInfo) {
-            wx.switchTab({
-                url: "/pages/user/index",
-                complete: () => {
-                    Toast.fail('请先登录');
-                }
-            });
-            return
-        }
         this.setData({
             show: true,
         });
@@ -69,6 +60,8 @@ Page({
             success:()=>{
                 this.setData({
                     loading: false,
+                    name:"",
+                    src:""
                   })
                  this.getList()
             }
@@ -78,29 +71,52 @@ Page({
         db.collection('article').get().then(res => {
             const data=res.data.map((item)=>{
                return {
+                id:item._id,
                 name:item.name,
                 src:item.src,
                 label:`作者：${item.username}-----上传时间：${new Date(item.date).toLocaleString()}-----阅读数：${item.number}`,
                }  
             });
-            console.log(data)
             this.setData({
                 list:data
             })
         })
     },
-    jump(e) {
-        const couponIdx = e.currentTarget.dataset.index
-        const wxappinfo = this.data.tabs[this.data.activeTab].coupon[couponIdx].minapp
-
-        wx.navigateToMiniProgram({
-            appId: wxappinfo.appid,
-            path: wxappinfo.path,
-            success(res) {
-                // 打开成功
-                console.log('打开成功', res)
-            }
+    addLog(aid){
+        wx.cloud.callFunction({
+            name: 'log_add',
+            data: {
+                info: {
+                    username: app.globalData.userInfo.nickName,
+                    aid,
+                }
+            },
+            // success:()=>{
+            //     this.setData({
+            //         loading: false,
+            //       })
+            //      this.getList()
+            // }
         })
+    },
+    jump(e) {
+       const {dataset}=e.currentTarget;
+        wx.navigateTo({
+            url: `/pages/read/index?src=${dataset.src}`,
+            // events: {
+            //   // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
+            //   acceptDataFromOpenedPage: function(data) {
+            //     console.log(data)
+            //   },
+            //   someEvent: function(data) {
+            //     console.log(data)
+            //   }
+            // },
+            success: (res)=> {
+              // 通过eventChannel向被打开页面传送数据
+              this.addLog(dataset.id)
+            }
+          })
     },
 
     /**
@@ -113,6 +129,16 @@ Page({
      */
     onShow: function () {
         this.getTabBar().init();
+        if (!app.globalData.userInfo) {
+            wx.switchTab({
+                url: "/pages/user/index",
+                complete: () => {
+                    Toast.fail('请先登录');
+                }
+            });
+            return
+        }
+        this.getList()
     },
 
     /**

@@ -1,13 +1,13 @@
 <!-- miniprogram/pages/index/index.wxml -->
-<van-notice-bar left-icon="volume-o" scrollable="{{ false }}" text="只支持公众号文章" />
+<van-notice-bar left-icon="volume-o"  text="只支持公众号（公众号要关联此小程序）的文章" />
 <view class="container_article">
     <view class="article_add">
         <van-button type="primary" bind:click="showAdd">添加文章链接</van-button>
     </view>
     <view class="article_list">
         <van-cell-group>
-            <van-cell wx:key="index" wx:for="{{list}}" center title="{{item.name}}" value="内容" is-link label="{{item.label}}"
-                link-type="navigateTo" url="/pages/read/index?src='{{item.src}}'" />
+            <van-cell data-id="{{item.id}}" data-src="{{item.src}}" wx:key="index" wx:for="{{list}}" center title="{{item.name}}" value="内容" is-link
+                label="{{item.label}}" bind:click="jump"  />
         </van-cell-group>
     </view>
 </view>

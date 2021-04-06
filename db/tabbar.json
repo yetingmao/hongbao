@@ -1,0 +1,33 @@
+{
+  "_id": "b00064a7604c06f009b9efab75e220e4",
+  "list": [
+    {
+      "icon": "bill-o",
+      "text": "领红包",
+      "url": "/pages/index/index",
+      "show":true,
+      "name": "home"
+    },
+    {
+      "icon": "apps-o",
+      "text": "工具",
+      "url": "/pages/tools/index",
+      "show":true,
+      "name": "tools"
+    },
+    {
+      "icon": "bill-o",
+      "text": "阅读",
+      "url": "/pages/article/index",
+      "show":true,
+      "name": "article"
+    },
+    {
+      "icon": "manager-o",
+      "text": "我的",
+      "url": "/pages/user/index",
+      "show":true,
+      "name": "user"
+    }
+  ]
+}
