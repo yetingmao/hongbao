@@ -4,6 +4,7 @@
     "pages/tools/index",
     "pages/article/index",
     "pages/read/index",
+    "pages/meituan/index",
     "pages/user/index"
   ],
   "tabBar": {

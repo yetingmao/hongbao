@@ -20,6 +20,7 @@ Page({
     const {
       src
     } = options;
+    console.log(src)
     this.setData({
       src
     })

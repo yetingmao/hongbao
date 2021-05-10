@@ -82,10 +82,27 @@ Page({
             });
         }
     },
+    adLoad() {
+        console.log('index Banner 广告加载成功')
+      },
+    adError(err) {
+        console.log('index Banner 广告加载失败', err)
+      },
     jump(e) {
+        const type = e.currentTarget.dataset.type
+        if(type== "4"){
+            const src=encodeURIComponent("https://activityunion-marketing.meituan.com/mtzcoupon/index.html?channel=union&utm_source=60413&cpsMedia=1380472509358518334")
+            wx.navigateTo({
+                url: `/pages/meituan/index?src=${src}`,
+                success: (res)=> {
+                  // 通过eventChannel向被打开页面传送数据
+                  //this.addLog(dataset.id)
+                }
+              })
+              return;
+        }
         const couponIdx = e.currentTarget.dataset.index
         const wxappinfo = this.data.tabs[this.data.activeTab].coupon[couponIdx].minapp
-       
         wx.navigateToMiniProgram({
             appId: wxappinfo.appid,
             path: wxappinfo.path,
