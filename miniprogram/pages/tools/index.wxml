@@ -24,5 +24,8 @@
             </view>
         </van-tab>
     </van-tabs>
+    <view class="adcontent">
+        <ad unit-id="adunit-f30a61b7661a529d" ad-type="video" ad-theme="white"></ad>
+    </view>
 </view>
 <van-toast id="van-toast" />

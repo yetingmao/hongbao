@@ -1,6 +1,5 @@
 const db = wx.cloud.database()
 const app = getApp()
-let videoAd = null
 Page({
     /**
      * 页面的初始数据
@@ -13,37 +12,6 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        if (wx.createRewardedVideoAd) {
-            videoAd = wx.createRewardedVideoAd({
-                adUnitId: 'adunit-04e37f0625ceb8e0'
-            })
-            videoAd.onLoad(() => {
-                if (videoAd) {
-                    console.log('you激励视频 广告加载成功')
-                    videoAd.show().catch(() => {
-                      // 失败重试
-                    //   console.log('you激励视频 失败重试')
-                    //   videoAd.load()
-                    //     .then(() => videoAd.show())
-                    //     .catch(err => {
-                    //       console.log('激励视频 广告显示失败')
-                    //     })
-                    })
-                  }
-            })
-            videoAd.onError((err) => {})
-            videoAd.onClose((res) => {})
-            if (videoAd) {
-                videoAd.show().catch(() => {
-                  // 失败重试
-                  videoAd.load()
-                    .then(() => videoAd.show())
-                    .catch(err => {
-                      console.log('激励视频 广告显示失败')
-                    })
-                })
-              }
-        }
         db.collection('tools').get().then(res => {
             // console.log(res)
             const tabs = res.data;
@@ -77,12 +45,6 @@ Page({
                 console.log('打开成功', res)
             }
         })
-    },
-    adLoad() {
-        console.log('Banner 广告加载成功')
-    },
-    adError(err) {
-        console.log('Banner 广告加载失败', err)
     },
 
     /**

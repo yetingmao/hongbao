@@ -15,6 +15,13 @@ Component({
 				"name": "tools"
 			},
 			{
+				"icon": "video-o",
+				"text": "视频",
+				"url": "/pages/video/index",
+				"show":true,
+				"name": "video"
+			},
+			{
 				icon: 'description',
 				text: '阅读',
 				url: '/pages/article/index',

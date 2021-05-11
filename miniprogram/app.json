@@ -1,7 +1,10 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/tools/index",
+
+    "pages/video/index",
+
+    "pages/index/index",
     "pages/article/index",
     "pages/read/index",
     "pages/meituan/index",
@@ -12,6 +15,9 @@
 		"list": [
 			{
 				"pagePath": "pages/index/index"
+      },
+      {
+				"pagePath": "pages/video/index"
       },
       {
 				"pagePath": "pages/tools/index"
