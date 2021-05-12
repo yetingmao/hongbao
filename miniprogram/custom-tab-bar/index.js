@@ -14,13 +14,27 @@ Component({
 				"url": "/pages/tools/index",
 				"name": "tools"
 			},
+			// {
+			// 	"icon": "video-o",
+			// 	"text": "视频",
+			// 	"url": "/pages/video/index",
+			// 	"show":true,
+			// 	"name": "video"
+			// },
 			{
-				"icon": "video-o",
-				"text": "视频",
-				"url": "/pages/video/index",
-				"show":true,
-				"name": "video"
+				"icon": "gift-o",
+				"text": "购物红包",
+				"url": "/pages/buy/index",
+				"show":false,
+				"name": "buy"
 			},
+			// {
+			// 	"icon": "video-o",
+			// 	"text": "视频",
+			// 	"url": "/pages/video/index",
+			// 	"show":true,
+			// 	"name": "video"
+			// },
 			{
 				icon: 'description',
 				text: '阅读',

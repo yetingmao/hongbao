@@ -3,7 +3,7 @@
   "list": [
     {
       "icon": "bill-o",
-      "text": "领红包",
+      "text": "红包",
       "url": "/pages/index/index",
       "show":true,
       "name": "home"
@@ -19,11 +19,18 @@
       "icon": "video-o",
       "text": "视频",
       "url": "/pages/video/index",
-      "show":true,
+      "show":false,
       "name": "video"
     },
     {
-      "icon": "bill-o",
+      "icon": "gift-o",
+      "text": "购物红包",
+      "url": "/pages/buy/index",
+      "show":false,
+      "name": "buy"
+    },
+    {
+      "icon": "description",
       "text": "阅读",
       "url": "/pages/article/index",
       "show":true,

@@ -1,10 +1,8 @@
 {
   "pages": [
-    "pages/tools/index",
-
-    "pages/video/index",
-
     "pages/index/index",
+    "pages/buy/index",
+    "pages/tools/index",
     "pages/article/index",
     "pages/read/index",
     "pages/meituan/index",
@@ -17,9 +15,6 @@
 				"pagePath": "pages/index/index"
       },
       {
-				"pagePath": "pages/video/index"
-      },
-      {
 				"pagePath": "pages/tools/index"
       },
       {
@@ -27,6 +22,9 @@
 			},
 			{
 				"pagePath": "pages/user/index"
+      },
+      {
+				"pagePath": "pages/buy/index"
 			}
 		]
 	},
