@@ -10,9 +10,12 @@
   </view>
   <view class="content">
     <van-cell-group>
-      <van-cell title="订阅红包" icon="smile-comment-o" is-link bind:click="requestSubscribe" />
-      <van-cell title="收藏" icon="records" is-link bind:click="collect" />
+      <van-cell title="领外卖红包" icon="bill-o" is-link bind:click="getHongbao" />
+    </van-cell-group>
+    <van-cell-group>
+      <van-cell title="证件照制作" icon="user-o" is-link bind:click="getPhoto" />
     </van-cell-group>
   </view>
+
   <van-toast id="van-toast" />
 </view>

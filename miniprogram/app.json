@@ -1,12 +1,12 @@
 {
   "pages": [
+    "pages/user/index",
+    "pages/article/index",
     "pages/index/index",
     "pages/buy/index",
     "pages/tools/index",
-    "pages/article/index",
     "pages/read/index",
-    "pages/meituan/index",
-    "pages/user/index"
+    "pages/meituan/index"
   ],
   "tabBar": {
 		"custom": true,

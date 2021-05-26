@@ -6,7 +6,7 @@
  <van-image bindtap="play" width="100" height="100" src="cloud://hongbao-1g1vxdep2e9a4001.686f-hongbao-1g1vxdep2e9a4001-1304791238/buy1.jpeg" />
   </view>
 
-  <view class="buy_text" >
+  <view class="buy_text" wx:if="{{look}}">
     <van-divider
     customStyle="color: #1989fa; border-color: #1989fa; font-size: 12px;"
       contentPosition="center">复制下面文案，打开淘宝即可领取专属优惠劵</van-divider>

@@ -8,7 +8,7 @@ exports.main = async (event, context) => {
   try {
     return await db.collection('messages').where({
       templateId: "WsI7r1v9d1hdKcWqT9cLmktb8CHGI8Rnfy4d6QlpGoc",
-      send:true
+      send:false
     }).remove()
   } catch (e) {
     console.log(e)

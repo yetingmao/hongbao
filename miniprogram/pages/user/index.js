@@ -62,8 +62,25 @@ Page({
       },
     })
   },
-  collect() {
-    Toast.success('点击右上角添加收藏～');
+  getHongbao() {
+    wx.navigateToMiniProgram({
+      appId: "wxfafc40d8f0d823c6",
+      path: "pages/index/index",
+      success(res) {
+          // 打开成功
+          console.log('打开成功', res)
+      }
+  })
+  },
+  getPhoto() {
+    wx.navigateToMiniProgram({
+      appId: "wx063f19ef77a02564",
+      path: "pages/index/index",
+      success(res) {
+          // 打开成功
+          console.log('打开成功', res)
+      }
+  })
   },
   requestSubscribe() {
     if (!app.globalData.userInfo) {

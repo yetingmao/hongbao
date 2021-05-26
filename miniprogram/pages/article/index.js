@@ -1,9 +1,6 @@
 // miniprogram/pages/index/index.js
-import {
-    subscribe,
-    hasSubscribe
-} from "../../utils/index"
 import Toast from '../../components/dist/toast/toast';
+let videoAd = null
 const db = wx.cloud.database()
 const app = getApp()
 Page({
@@ -17,17 +14,54 @@ Page({
         name:"",
         loading: false,
         list: [],
+        look:false,
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-       
+        let that = this;
+        if (wx.createRewardedVideoAd) {
+          videoAd = wx.createRewardedVideoAd({
+            adUnitId: 'adunit-04e37f0625ceb8e0'
+          })
+          videoAd.onLoad(() => {
+            if (videoAd) {
+              console.log('you激励视频 广告加载成功')
+              // videoAd.show().catch(() => {})
+            }
+          })
+          videoAd.onError((err) => {
+              console.log(111,err)
+          })
+          videoAd.onClose((res) => {
+            if (res && res.isEnded) {
+              // 正常播放结束，可以下发游戏奖励
+              that.setData({
+                look: true,
+                show: true,
+              })
+            } else {
+              // 播放中途退出，不下发游戏奖励
+            }
+          })
+        }
     },
     showAdd(e) {
-        this.setData({
-            show: true,
-        });
+        if (this.data.look) {
+            this.setData({
+                show: true,
+            });
+          } else {
+            videoAd.show().catch(() => {
+                // 失败重试
+                videoAd.load()
+                  .then(() => videoAd.show())
+                  .catch(err => {
+                    console.log('激励视频 广告显示失败')
+                  })
+              })
+          }
     },
     onClose() {
         this.setData({
@@ -145,7 +179,10 @@ Page({
      * 生命周期函数--监听页面隐藏
      */
     onHide: function () {
-
+        this.setData({
+            look: false,
+            show: false,
+          })
     },
 
     /**

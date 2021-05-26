@@ -2,18 +2,19 @@ const db = wx.cloud.database()
 Component({
 	data: {
 		active: "home",
-		list: [{
-				icon: 'bill-o',
-				text: '领红包',
-				url: '/pages/index/index',
-				name: "home"
-			},
-			{
-				"icon": "apps-o",
-				"text": "工具",
-				"url": "/pages/tools/index",
-				"name": "tools"
-			},
+		list: [
+			// {
+			// 	icon: 'bill-o',
+			// 	text: '领红包',
+			// 	url: '/pages/index/index',
+			// 	name: "home"
+			// },
+			// {
+			// 	"icon": "apps-o",
+			// 	"text": "工具",
+			// 	"url": "/pages/tools/index",
+			// 	"name": "tools"
+			// },
 			// {
 			// 	"icon": "video-o",
 			// 	"text": "视频",
@@ -21,13 +22,13 @@ Component({
 			// 	"show":true,
 			// 	"name": "video"
 			// },
-			{
-				"icon": "gift-o",
-				"text": "购物红包",
-				"url": "/pages/buy/index",
-				"show":false,
-				"name": "buy"
-			},
+			// {
+			// 	"icon": "gift-o",
+			// 	"text": "购物红包",
+			// 	"url": "/pages/buy/index",
+			// 	"show":false,
+			// 	"name": "buy"
+			// },
 			// {
 			// 	"icon": "video-o",
 			// 	"text": "视频",

@@ -10,7 +10,18 @@
             "icon": "cloud://hongbao-1g1vxdep2e9a4001.686f-hongbao-1g1vxdep2e9a4001-1304791238/ele.png",
             "minapp": {
                 "appid": "wxece3a9a4c82f58c9",
-                "path": "taoke/pages/shopping-guide/index?scene=cLCc3su"
+                "path": "taoke/pages/shopping-guide/index?scene=uH8D4ou"
+            }
+        },
+        {
+            "name": "5折下午茶",
+            "type": 1.0,
+            "url": "",
+            "bannerPic": "cloud://hongbao-1g1vxdep2e9a4001.686f-hongbao-1g1vxdep2e9a4001-1304791238/xiawucha.png",
+            "icon": "cloud://hongbao-1g1vxdep2e9a4001.686f-hongbao-1g1vxdep2e9a4001-1304791238/ele.png",
+            "minapp": {
+                "appid": "wxece3a9a4c82f58c9",
+                "path": "taoke/pages/shopping-guide/index?scene=https://s.click.ele.me/d8cWsnu"
             }
         },
         {
@@ -21,14 +32,14 @@
             "icon": "cloud://hongbao-1g1vxdep2e9a4001.686f-hongbao-1g1vxdep2e9a4001-1304791238/ele.png",
             "minapp": {
                 "appid": "wxece3a9a4c82f58c9",
-                "path": "pages/sharePid/web/index?scene=https://s.click.ele.me/N4eX3su"
+                "path": "pages/sharePid/web/index?scene=https://s.click.ele.me/MWxC4ou"
             }
         },
         {
             "bannerPic": "cloud://hongbao-1g1vxdep2e9a4001.686f-hongbao-1g1vxdep2e9a4001-1304791238/banner2.png",
             "minapp": {
                 "appid": "wxece3a9a4c82f58c9",
-                "path": "pages/sharePid/web/index?scene=https://s.click.ele.me/J6Ga8su"
+                "path": "pages/sharePid/web/index?scene=https://s.click.ele.me/naOTAou"
             },
             "name": "商超限量",
             "type": 1.0,
@@ -48,7 +59,7 @@
             "type": 1,
             "minapp": {
                 "appid": "wxde8ac0a21135c07d",
-                "path": "/index/pages/h5/h5?weburl=https%3A%2F%2Fclick.meituan.com%2Ft%3Ft%3D1%26c%3D1%26p%3DOWMpZ-uzIFOVe6JyOONs3dXuqV0qcAf-r-KCvHdXiNdKyVFMZCFoDQ11cZBvXQf3I-7xpbKTNcTxVvtWCZ6vqsjMGOmbSLlSmJUDKTsLYRwfQYNd6muM4I17lvwA2lPeidR4xYqK8pvYIFvJsr7VdL_iRbZeacSzN7a8yilj2JqlspvUCB2Q18wVws8NgV4cNyqqAj1Anj25KCGjX-dwbqYU7LJ1xuIZFYpZ_FDoFRhwwhm48Mr70VMkt-Pusz0GGKNpErWDXS-ypWr7HhEvuKEDUSzEMiap9-gjB_XgdadtYrMnR6qWV2w8Hdbi7ZCQyar9DaJ_TWeMeEd3OwjE4ctkiMcHWjPw0PPkSkwNdfayXEfPZaaGEh8yfpw0a5InZFlhVe4_35BQL09iOcESQWZ1BQ62x37OTqwTfAjQGi1OJiR2Izbh3d_q5GP-0T5QS4GK0uiPCeJv-IW1oEPGg29xkPyw_792vh1EKvQEjh2LppFfvjyibjAHekBKdpZjPUOPNxZXhUywtwJLUp5s7vjtLhsNEM-JNHGn26n8MvlFaJ46FP7dhk_TCRZp8SubR4d3gMAiqODsznEpxe6u3TPH9YIO02-7dU-n7YcaER0P88yGfBVLlnUvLeYx0WHDSZNAANvQP10LImSpunuIqeTAy1HHMrkm_9rBnsk-QFynMgNoHCHpCXnVdPQjtQJz&lch=cps:waimai:5:63d818920787cd4ab953b22e9c952f82:yetingmao&f_token=1&f_userId=1",
+                "path": "/index/pages/h5/h5?weburl=https%3A%2F%2Fclick.meituan.com%2Ft%3Ft%3D1%26c%3D1%26p%3DOWMpZ-uzIFOVe6JyOONs3dXuqV0qcAf-r-KCvHdXiNdKyVFMZCFoDQ11cZBvXQf3I-7xpbKTNcTxVvtWCZ6vqsjMGOmbSLlSmJUDKTsLYRwfQYNd6muM4I17lvwA2lPeidR4xYqK8pvYIFvJsr7VdL_iRbZeacSzN7a8yilj2JqlspvUCB2Q18wVws8NgV4cNyqqAj1Anj25KCGjX-dwbqYU7LJ1xuIZFYpZ_FDoFRhwwhm48Mr70VMkt-Pusz0GGKNpErWDXS-ypWr7HhEvuKEDUSzEMiap9-gjB_XgdadtYrMnR6qWV2w8Hdbi7ZCQyar9DaJ_TWeMeEd3OwjE4ctkiMcHWjPw0PPkSkwNdfayXEfPZaaGEh8yfpw0a5InZFlhVe4_35BQL09iOcESQWZ1BQ62x37OTqwTfAjQGi1OJiR2Izbh3d_q5GP-0T5QS4GK0uiPCeJv-IW1oEPGg29xkPyw_792vh1EKvQEjh2LppFfvjyibjAHekBKdpZjPUOPNxZXhUywtwJLUp5s7vjtLhsNEM-JNHGn26n8MvlFaJ46FP7dhk_TCRZp8SubR4d3gMAiqODsznEpxe6u3TPH9YIO02-7dU-n7YcaER0P88yGfBVLlnUvLeYx0WHDSZNAANvQP10LImSpunuIqeTAy1HHMrkm_9rBnsk-QFynMgNoHCHpCXnVdPQjtQJz&lch=cps:waimai:5:63d818920787cd4ab953b22e9c952f82:yetingmao:2:93288&f_token=1&f_userId=1"
             }
         },
         {
@@ -74,8 +85,7 @@
             "type": 1,
             "minapp": {
                 "appid": "wxaf35009675aa0b2a",
-                "path": "passenger-recommend/views/homepage/index?scene=14&channel_id=1100000090&fromCoupon=self&share_level=1&first_uid=299067250186250&root_dchn=w0WWXX&share_uid=299067250186250&template=1",
-                
+                "path": "passenger-recommend/views/homepage/index?scene=14&channel_id=1100000090&fromCoupon=self&share_level=1&first_uid=299067250186250&root_dchn=w0WWXX&share_uid=299067250186250&template=1"
             }
         }
     ]
@@ -112,4 +122,3 @@
         }
     ]
 }
-

@@ -46,20 +46,23 @@ Page({
       this.setData({
         loading: true
       })
-      db.collection('shop').get().then(res => {
-        const shop = res.data;
-        if (shop[0]) {
-          this.setData({
-            text: shop[0].text
-          })
-          this.setData({
-            loading: false
-          })
-        }
-      })
     } else {
       videoAd.show();
     }
+    this.getinfo()
+  },
+  getinfo(){
+    db.collection('shop').get().then(res => {
+      const shop = res.data;
+      if (shop[0]) {
+        this.setData({
+          text: shop[0].text
+        })
+        this.setData({
+          loading: false
+        })
+      }
+    })
   },
   copy(e) {
     wx.setClipboardData({
@@ -91,9 +94,9 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    this.setData({
-      text: ""
-    })
+    // this.setData({
+    //   text: "",
+    // })
   },
 
   /**
