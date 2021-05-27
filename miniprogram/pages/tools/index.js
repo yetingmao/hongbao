@@ -1,22 +1,51 @@
-const db = wx.cloud.database()
+import Toast from '../../components/dist/toast/toast';
 const app = getApp()
 Page({
     /**
      * 页面的初始数据
      */
     data: {
-        tabs: [],
-        activeTab: 0,
+        url: "",
+        steps: [
+            {
+              text: '步骤一',
+              desc: '去抖音获取视频的分享链接',
+            },
+            {
+              text: '步骤二',
+              desc: '获取的视频链接，如https://v.douyin.com/e5KPUNB/',
+            },
+            {
+              text: '步骤三',
+              desc: '把链接放进输入框里，点击提取',
+            },
+          ],
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        
-    },
 
+    },
+    write(e) {
+        this.setData({
+            url: e.detail
+        })
+    },
+    do() {
+        if (this.data.url) {
+            wx.cloud.callFunction({
+                name: 'gowm',
+                data: {
+                    url: this.data.url
+                },
+            })
+        }else{
+            Toast('请先输入链接');
+        }
+    },
     /**
-     * 生命周期函数--监听页面初次渲染完成
+     * 生命周期函数--监听页面初次渲染完成 https://v.douyin.com/e5KPUNB/
      */
     onReady: function () {},
 

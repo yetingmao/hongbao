@@ -1,8 +1,10 @@
 {
     "usingComponents": {
-        "van-tab": "../../components/dist/tab",
-        "van-tabs": "../../components/dist/tabs",
-        "van-notice-bar": "../../components/dist/notice-bar",
-        "van-loading": "../../components/dist/loading"
+        "van-loading": "../../components/dist/loading",
+        "van-button": "../../components/dist/button/index",
+        "van-toast": "../../components/dist/toast",
+        "van-notice-bar": "../../components/dist/notice-bar/index",
+        "van-steps": "../../components/dist/steps/index",
+        "van-field": "../../components/dist/field"
     }
 }

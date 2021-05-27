@@ -1,4 +1,3 @@
-
 /* 样式 */
 page {
   background-color: #f8f8f8;
@@ -8,13 +7,13 @@ page {
   font-size: 14px;
   line-height: 24px;
   position: relative;
+  padding: 20rpx;
 }
-
-.container .tab {
-  position: fixed;
-  top: var(--window-top);
-  left: 0;
-  z-index: 9999;
+.container .top{
+  margin-top: 40rpx;
+}
+.container .top button {
+  width: 160rpx;
 }
 
 .container .coupon {
@@ -101,5 +100,5 @@ page {
 
 
 .loading {
-    text-align: center;
+  text-align: center;
 }
