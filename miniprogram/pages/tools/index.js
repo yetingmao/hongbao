@@ -12,39 +12,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        db.collection('tools').get().then(res => {
-            // console.log(res)
-            const tabs = res.data;
-            // tabs.forEach(item => {
-            //     let c = item.coupon
-            //     c.forEach(citem => {
-            //         all.coupon.push(citem)
-            //     })
-            // })
-            this.setData({
-                tabs
-            })
-        })
-    },
-
-    onChange(e) {
-        const index = e.detail.index
-        this.setData({
-            activeTab: parseInt(index)
-        })
-    },
-    jump(e) {
-        const couponIdx = e.currentTarget.dataset.index
-        const wxappinfo = this.data.tabs[this.data.activeTab].coupon[couponIdx].minapp
-
-        wx.navigateToMiniProgram({
-            appId: wxappinfo.appid,
-            path: wxappinfo.path,
-            success(res) {
-                // 打开成功
-                console.log('打开成功', res)
-            }
-        })
+        
     },
 
     /**

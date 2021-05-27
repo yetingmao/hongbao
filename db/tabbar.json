@@ -2,32 +2,11 @@
   "_id": "b00064a7604c06f009b9efab75e220e4",
   "list": [
     {
-      "icon": "bill-o",
-      "text": "红包",
-      "url": "/pages/index/index",
-      "show":true,
-      "name": "home"
-    },
-    {
       "icon": "apps-o",
-      "text": "工具",
+      "text": "抖音去水印",
       "url": "/pages/tools/index",
       "show":true,
       "name": "tools"
-    },
-    {
-      "icon": "video-o",
-      "text": "视频",
-      "url": "/pages/video/index",
-      "show":false,
-      "name": "video"
-    },
-    {
-      "icon": "gift-o",
-      "text": "购物红包",
-      "url": "/pages/buy/index",
-      "show":false,
-      "name": "buy"
     },
     {
       "icon": "description",

@@ -1,10 +1,11 @@
 {
   "pages": [
+    "pages/tools/index",
+
     "pages/user/index",
     "pages/article/index",
     "pages/index/index",
     "pages/buy/index",
-    "pages/tools/index",
     "pages/read/index",
     "pages/meituan/index"
   ],

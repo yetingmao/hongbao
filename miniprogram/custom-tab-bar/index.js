@@ -37,6 +37,13 @@ Component({
 			// 	"name": "video"
 			// },
 			{
+				"icon": "apps-o",
+				"text": "抖音去水印",
+				"url": "/pages/tools/index",
+				"show":true,
+				"name": "tools"
+			},
+			{
 				icon: 'description',
 				text: '阅读',
 				url: '/pages/article/index',
