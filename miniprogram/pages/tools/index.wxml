@@ -2,7 +2,6 @@
   text="提示：输入视频链接，如：https://v.douyin.com/e5KPUNB/"
 />
 <view class="container">
-  <van-steps steps="{{ steps }}" direction="vertical" active="{{2}}" />
   <view class="top">
     <van-cell-group>
       <van-field value="{{ url }}" center clearable  placeholder="请输入视频链接" bind:change="write"
@@ -13,6 +12,9 @@
       </van-field>
     </van-cell-group>
   </view>
-  <view class="tip"></view>
+  <view class="tip">
+  <van-cell title="帮助中心" is-link link-type="navigateTo" url="/pages/help/index"/>
+
+  </view>
 <van-toast id="van-toast" />
 </view>

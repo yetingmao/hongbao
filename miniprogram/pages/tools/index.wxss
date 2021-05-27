@@ -10,14 +10,14 @@ page {
   padding: 20rpx;
 }
 .container .top{
-  margin-top: 40rpx;
+  margin-top: 20rpx;
 }
 .container .top button {
   width: 160rpx;
 }
 
-.container .coupon {
-  /* padding-top: 200rpx; */
+.container .tip {
+  margin-top: 20rpx;
 }
 
 .container .coupon .item {

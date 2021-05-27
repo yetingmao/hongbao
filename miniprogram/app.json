@@ -7,7 +7,7 @@
     "pages/index/index",
     "pages/buy/index",
     "pages/read/index",
-    "pages/meituan/index"
+    "pages/help/index"
   ],
   "tabBar": {
 		"custom": true,

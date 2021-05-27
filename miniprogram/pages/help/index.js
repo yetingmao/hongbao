@@ -6,23 +6,48 @@ Page({
    * 页面的初始数据
    */
   data: {
-    src: ""
+    steps: [
+      {
+        text: '步骤一',
+        desc: '去抖音获取视频的分享链接',
+      },
+      {
+        text: '步骤二',
+        desc: '截取视频链接，如https://v.douyin.com/e5KPUNB/',
+      },
+      {
+        text: '步骤三',
+        desc: '取链接放进输入框里，点击提取',
+      },
+    ],
+    activeNames: '1',
+    url:""
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    const {
-      src
-    } = options;
-    const temp=decodeURIComponent(src);
-    console.log(temp)
-    this.setData({
-      src:src
-    })
+  onLoad: function () {
+    this.getinfo()
   },
 
+  onChange(event) {
+    console.log(event.detail)
+    this.setData({
+      activeName: event.detail,
+    });
+  },
+  getinfo(){
+    db.collection('shop').get().then(res => {
+      const shop = res.data;
+      if (shop[0]) {
+        this.setData({
+          url: shop[0].text
+        })
+      console.log(shop[0].text)
 
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

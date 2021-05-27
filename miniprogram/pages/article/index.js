@@ -21,31 +21,31 @@ Page({
      */
     onLoad: function (options) {
         let that = this;
-        if (wx.createRewardedVideoAd) {
-          videoAd = wx.createRewardedVideoAd({
-            adUnitId: 'adunit-04e37f0625ceb8e0'
-          })
-          videoAd.onLoad(() => {
-            if (videoAd) {
-              console.log('you激励视频 广告加载成功')
-              // videoAd.show().catch(() => {})
-            }
-          })
-          videoAd.onError((err) => {
-              console.log(111,err)
-          })
-          videoAd.onClose((res) => {
-            if (res && res.isEnded) {
-              // 正常播放结束，可以下发游戏奖励
-              that.setData({
-                look: true,
-                show: true,
-              })
-            } else {
-              // 播放中途退出，不下发游戏奖励
-            }
-          })
-        }
+        // if (wx.createRewardedVideoAd) {
+        //   videoAd = wx.createRewardedVideoAd({
+        //     adUnitId: 'adunit-04e37f0625ceb8e0'
+        //   })
+        //   videoAd.onLoad(() => {
+        //     if (videoAd) {
+        //       console.log('you激励视频 广告加载成功')
+        //       // videoAd.show().catch(() => {})
+        //     }
+        //   })
+        //   videoAd.onError((err) => {
+        //       console.log(111,err)
+        //   })
+        //   videoAd.onClose((res) => {
+        //     if (res && res.isEnded) {
+        //       // 正常播放结束，可以下发游戏奖励
+        //       that.setData({
+        //         look: true,
+        //         show: true,
+        //       })
+        //     } else {
+        //       // 播放中途退出，不下发游戏奖励
+        //     }
+        //   })
+        // }
     },
     showAdd(e) {
         if (this.data.look) {
